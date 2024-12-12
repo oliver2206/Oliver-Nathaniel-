@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Ilocos Sur </title>
+ <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="Slider.css">
+ <link rel="stylesheet" href="basket.css">
+ <link rel="stylesheet" href="boxes.css">
+  <style>
+    /* Basic styles for product cards */
+    .product-row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .product-card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      text-align: center;
+      width: 200px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="juan.png" alt="Logo">
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="#">Products</a>
+      <a href="#">Service</a>
+      <a href="#">About Us</a>
+    </nav>
+    <button onclick="goToBasket()">Basket (<span id="basket-count">0</span>)</button>
+  </header>
+
+  <!-- Product Section -->
+  <div class="gallery-container">
+    <div class="product-row">
+      <div class="product-card">
+        <img src="./alilem/alilem.CANEVINEGAR.jpg.png" alt="Canevinegar of Alilem">
+        <h3>Canevinegar of Alilem</h3>
+        <p>Php 80</p>
+        <button onclick="addToBasket('Canevinegar of Alilem', 80, './alilem/alilem.CANEVINEGAR.jpg.png')">Add to Cart</button>
+      </div>
+      <!-- Add more products here -->
+    </div>
+  </div>
+
+  <script>
+    let basket = JSON.parse(localStorage.getItem('basket')) || [];
+    const basketCountDisplay = document.getElementById('basket-count');
+
+    function addToBasket(name, price, image) {
+      const existingItem = basket.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity++;
+      } else {
+        basket.push({ name, price, image, quantity: 1 });
+      }
+      localStorage.setItem('basket', JSON.stringify(basket));
+      updateBasketDisplay();
+    }
+
+    function updateBasketDisplay() {
+      basketCountDisplay.textContent = basket.reduce((acc, item) => acc + item.quantity, 0);
+    }
+
+    function goToBasket() {
+      window.location.href = 'basket.html';
+    }
+
+    // Initialize basket count on page load
+    updateBasketDisplay();
+  </script>
+</body>
+</html>

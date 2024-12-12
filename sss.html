@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Ilocos Sur</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="alilem.css">
+  <!-- Slick Carousel CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+</head>
+<body>
+  <!-- Header Top Bar -->
+  <div class="header-top">
+    <span class="carousel-text">FREE SHIPPING OVER $100 - Use code FREE100 | Sign up for exclusive offers | New arrivals now in stock!</span>
+  </div>
+
+  <!-- Main Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="juan.png" alt="Logo">
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="#">Shop</a>
+      <a href="#">New</a>
+      <a href="#">Exclusives</a>
+      <a href="#">Sales</a>
+    </nav>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search" oninput="showSuggestions(this.value)">
+      <button onclick="searchFunction()">Search</button>
+      <div id="suggestions-box" class="suggestions"></div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Juan Ilocos Sur</h1>
+    <p>"Ti Juan Ilocos Sur ket naglaon kadagiti nabaknang a produkto nga agsisimbolo ti nadumaduma nga kultura ken tradisyon!"</p>
+    <button>Shop Now</button>
+  </section>
+
+  <!-- Product Carousel Section -->
+  <div class="outer-container">
+    <div class="container">
+      <!-- Product Carousel -->
+      <div class="product-carousel">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <img src="walis tambo.webp" alt="Product 1">
+          <h3>Walis Tambo</h3>
+          <p>Tambo</p>
+          <button>Add to Cart</button>
+        </div>
+  
+        <!-- Product 2 -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250" alt="Product 2">
+          <h3>Product 2</h3>
+          <p>$24.99</p>
+          <button>Add to Cart</button>
+        </div>
+  
+        <!-- Product 3 -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250" alt="Product 3">
+          <h3>Product 3</h3>
+          <p>$29.99</p>
+          <button>Add to Cart</button>
+        </div>
+  
+        <!-- Product 4 -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250" alt="Product 4">
+          <h3>Product 4</h3>
+          <p>$34.99</p>
+          <button>Add to Cart</button>
+        </div>
+  
+        <!-- Product 5 -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250" alt="Product 5">
+          <h3>Product 5</h3>
+          <p>$39.99</p>
+          <button>Add to Cart</button>
+        </div>
+  
+        <!-- Product 6 -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250" alt="Product 6">
+          <h3>Product 6</h3>
+          <p>$44.99</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card">
+          <img src="https://via.placeholder.com/250" alt="Product 7">
+          <h3>Product 7</h3>
+          <p>$49.99</p>
+          <button>Add to Cart</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    // Initialize Slick Carousel
+    $(document).ready(function(){
+      $('.product-carousel').slick({
+        infinite: true,  // Enable infinite scrolling
+        slidesToShow: 5, // Show 5 products at a time
+        slidesToScroll: 1, // Scroll 1 product at a time
+        prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+        nextArrow: '<button type="button" class="slick-next">Next</button>',
+        responsive: [
+          {
+            breakpoint: 1024, // On medium screens
+            settings: {
+              slidesToShow: 3,  // Show 3 products at a time
+            }
+          },
+          {
+            breakpoint: 768, // On small screens (mobile)
+            settings: {
+              slidesToShow: 1,  // Show 1 product at a time
+            }
+          }
+        ]
+      });
+    });
+
+    // Suggestion Box Script
+    const suggestionsList = [
+      'Aringay', 'Bantay', 'Burgos', 'Cabugao', 'Candon', 'Caoyan', 'Cervantes',
+      'Galimuyod', 'Gregorio Del Pilar', 'Lidlidda', 'Magsingal', 'Nagbukel', 'Narvacan',
+      'Quirino', 'Salcedo', 'San Emilio', 'San Esteban', 'San Juan', 'San Vicente',
+      'Santa', 'Santa Catalina', 'Santa Cruz', 'Santa Lucia', 'Santa Maria', 'Santiago',
+      'Suyo', 'Tagudin', 'Vigan'
+    ];
+
+    function showSuggestions(query) {
+      const suggestionsBox = document.getElementById('suggestions-box');
+      suggestionsBox.innerHTML = '';
+      if (query) {
+        const filteredSuggestions = suggestionsList.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+        filteredSuggestions.forEach(suggestion => {
+          const suggestionDiv = document.createElement('div');
+          suggestionDiv.textContent = suggestion;
+          suggestionDiv.onclick = () => {
+            document.getElementById('search-input').value = suggestion;
+            suggestionsBox.innerHTML = '';
+            searchFunction();
+          };
+          suggestionsBox.appendChild(suggestionDiv);
+        });
+      }
+    }
+
+    function searchFunction() {
+      const searchTerm = document.getElementById('search-input').value.toLowerCase().replace(/\s+/g, '-');
+      if (searchTerm) {
+        window.location.href = `${searchTerm}.html`;
+      } else {
+        alert("Please enter a search term.");
+      }
+    }
+  </script>
+</body>
+</html>

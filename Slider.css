@@ -1,0 +1,77 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for the entire banner */
+.banner-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Slider background and layout */
+.slider {
+    display: flex;
+    width: 200%; /* Allow for double the width for seamless scroll effect */
+    animation: scrollSlider 20s linear infinite; /* Infinite animation for scrolling */
+}
+
+/* Slider content layout */
+.slider-content {
+    display: flex;
+    width: 50%; /* Each slider-content takes half the width */
+}
+
+/* Individual slider item */
+.slider-item {
+    display: flex;
+    flex-direction: row; /* Change to row to align text and button horizontally */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+/* Styling for the text */
+.slider-item .text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 20px; /* Add space between text and button */
+}
+
+/* Styling for the button */
+.button {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Background image and size for slider */
+.slider {
+    background-image: url('https://via.placeholder.com/1920x1080/000000/FFFFFF?text=+');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Animation for the sliding effect */
+@keyframes scrollSlider {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}

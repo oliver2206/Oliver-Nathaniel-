@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Ilocos Sur</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="Slider.css">
+  <link rel="stylesheet" href="basket.css">
+  <link rel="stylesheet" href="boxes.css">
+  <link rel="stylesheet" href="./ADD TO CART.css">
+
+  <style>
+    
+  </style>
+</head>
+<body>
+  <!-- Header Top Bar -->
+  <div class="header-top">
+    <span class="carousel-text"></span>
+  </div>
+
+  <!-- Main Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="juan.png" alt="Logo">
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="#">Products</a>
+      <a href="#">Service</a>
+      <a href="#">About Us</a>
+    </nav>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search" oninput="showSuggestions(this.value)">
+      <button onclick="searchFunction()">Search</button>
+      <div id="suggestions-box" class="suggestions"></div>
+    </div>
+    <button id="basket-button" onclick="toggleBasket()">Basket (<span id="basket-count">0</span>)</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Juan Ilocos Sur</h1>
+    <p>"Ti Juan Ilocos Sur ket naglaon kadagiti nabaknang a produkto nga agsisimbolo ti nadumaduma nga kultura ken tradisyon!"</p>
+    <p>Scroll Down to See Products</p>
+  </section>
+  
+  <style>
+    /* Hero Section Styles */
+    .hero {
+      background-image: url('./01-Ilocos-Sur-Vigan-Travel.png'); /* Replace with your image path */
+      background-size: cover; /* Makes the image cover the entire section */
+      background-position: center; /* Centers the background image */
+      color: white; /* Text color to make it visible over the background */
+      text-align: center; /* Center align the text */
+      padding: 50px 20px; /* Add padding for spacing */
+    }
+  
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+  
+    .hero p {
+      font-size: 1.5em;
+    }
+  </style>
+
+
+  <div class="banner-container">
+    <div class="slider" style="background-image: url('https://t3.ftcdn.net/jpg/08/88/03/80/360_F_888038041_zNVaUTvBlyqPGMEYnZq0Uaw8Nea4zXjV.jpg'); background-size: cover; background-position: center;">
+        <div class="slider-content">
+            <div class="slider-item">
+                <span class="text"></span>"Savor the Tradition, Wear the Culture – The Essence of Ilocano Craft."</a>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Product Section -->
+  <div class="gallery-container">
+    <div class="product-row">
+      <div class="product-card">
+        <img src="./alilem/alilem.CANEVINEGAR.jpg.png" alt="Canevinegar of Alilem">
+        <h3>Canevinegar of Alilem</h3>
+        <p>Php 80</p>
+        <button onclick="addToBasket('Canevinegar of Alilem', 80, './alilem/alilem.CANEVINEGAR.jpg.png')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="./Bananayoyo/Untitled-1.png" alt="Banana Chips of Banayoyo">
+        <h3>Banana Chips of Banayoyo</h3>
+        <p>Php 25</p>
+        <button onclick="addToBasket('Banana Chips of Banayoyo', 25, './Bananayoyo/Untitled-1.png')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="./Bantay/Untitled-2.png" alt="Abel Cloth of Bantay">
+        <h3>Abel Cloth of Bantay</h3>
+        <p>Php 250</p>
+        <button onclick="addToBasket('Abel Cloth of Bantay', 250, './Bantay/Untitled-2.png')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="./Candon/dried mango of candon.png" alt="Dried Mango of Candon">
+        <h3>Dried Mango of Candon</h3>
+        <p>Php 75</p>
+        <button onclick="addToBasket('Dried Mango of Candon', 75, './Candon/dried mango of candon.png')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="./Candon/cs.png" alt="Calamay of Candon">
+        <h3>Calamay of Candon</h3>
+        <p>Php 50</p>
+        <button onclick="addToBasket('Calamay of Candon', 50, './Candon/cs.png')">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="gallery-container">
+    <div class="product-row">
+      <div class="product-card">
+        <img src="./Caoayan/Untitled-2.png" alt="Abel of Caoayan">
+        <h3>Abel of Caoayan</h3>
+        <p>Php 99</p>
+        <button onclick="addToBasket('Abel of Caoayan', 99, './Caoayan/Untitled-2.png')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="./Cervantes/Cer.png" alt="Ginger Tea of Cervantes">
+        <h3>Ginger Tea of Cervantes</h3>
+        <p>Php 89</p>
+        <button onclick="addToBasket('Ginger Tea of Cervantes', 89, './Cervantes/Cer.png')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="./Cervantes/cervantes.png" alt="Veggie Noodles of Cervantes">
+        <h3>Veggie Noodles of Cervantes</h3>
+        <p>Php 99</p>
+        <button onclick="addToBasket('Veggie Noodles of Cervantes', 99, './Cervantes/cervantes.png')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="./Galimuyod/Untitled-2.png" alt="Cabisilan Rice Coffee Of Galimuyod">
+        <h3>Cabisilan Rice Coffee Of Galimuyod</h3>
+        <p>Php 75</p>
+        <button onclick="addToBasket('Cabisilan Rice Coffee Of Galimuyod', 75, './Galimuyod/Untitled-2.png')">Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <img src="./Ilocos sur/chicacorn.png" alt="Chichacorn of De Ilocos">
+        <h3>Chichacorn of De Ilocos</h3>
+        <p>Php 99</p>
+        <button onclick="addToBasket('Chichacorn of De Ilocos', 99, './Ilocos sur/chicacorn.png')">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="product-row">
+    <div class="product-card">
+      <img src="./Magsingal/Hand Crafts of Magsingal.png" alt="Hand Crafts Flower of Magsingal">
+      <h3>Hand Crafts Flower of Magsingal</h3>
+      <p>Php 80</p>
+      <button onclick="addToBasket('Hand Crafts Flower of Magsingal', 80, './Magsingal/Hand Crafts of Magsingal.png')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="./Magsingal/tinubong.png" alt="Tinubong De Magsingal">
+      <h3>Tinubong De Magsingal</h3>
+      <p>Php 3 for 100</p>
+      <button onclick="addToBasket('Tinubong De Magsingal', 3, './Magsingal/tinubong.png')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="./Nagbukel/papaya.png" alt="Processed Papaya of Nagbukel">
+      <h3>Processed Papaya of Nagbukel</h3>
+      <p>Php 80</p>
+      <button onclick="addToBasket('Processed Papaya of Nagbukel', 80, './Nagbukel/papaya.png')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="./San emillio/bugnay of emillio.png" alt="Bugnay Wine of San Emillio">
+      <h3>Bugnay Wine of San Emillio</h3>
+      <p>Php 120</p>
+      <button onclick="addToBasket('Bugnay Wine of San Emillio', 120, './San emillio/bugnay of emillio.png')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="./San emillio/tapey-san-emilio.jpg" alt="Tapey Wine of San Emillio">
+      <h3>Tapey Wine of San Emillio</h3>
+      <p>Php 120</p>
+      <button onclick="addToBasket('Tapey Wine of San Emillio', 120, './San emillio/tapey-san-emilio.jpg')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product-row">
+    <div class="product-card">
+      <img src="./San Esteban/Untitled-2.png" alt="Canevinegar of Alilem">
+      <h3>Canevinegar of Alilem</h3>
+      <p>Php 80</p>
+      <button onclick="addToBasket('Canevinegar of Alilem', 80, './San Esteban/Untitled-2.png')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="./San Esteban/san esteban.png" alt="Banana Chips of Banayoyo">
+      <h3>Banana Chips of Banayoyo</h3>
+      <p>Php 25</p>
+      <button onclick="addToBasket('Banana Chips of Banayoyo', 25, './San Esteban/san esteban.png')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="./san ildefonso/Untitled-2.png" alt="Abel Cloth of Bantay">
+      <h3>Abel Cloth of Bantay</h3>
+      <p>Php 250</p>
+      <button onclick="addToBasket('Abel Cloth of Bantay', 250, './san ildefonso/Untitled-2.png')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="./San juan/Untitled-2.png" alt="Dried Mango of Candon">
+      <h3>Dried Mango of Candon</h3>
+      <p>Php 75</p>
+      <button onclick="addToBasket('Dried Mango of Candon', 75, './San juan/Untitled-2.png')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="./Santa/Untitled-2.png" alt="Calamay of Candon">
+      <h3>Calamay of Candon</h3>
+      <p>Php 50</p>
+      <button onclick="addToBasket('Calamay of Candon', 50, './Santa/Untitled-2.png')">Add to Cart</button>
+    </div>
+  </div>
+  
+  <div class="product-row">
+    <div class="product-card">
+      <img src="./Santa Lucia/Untitled-2.png" alt="Canevinegar of Alilem">
+      <h3>Canevinegar of Alilem</h3>
+      <p>Php 80</p>
+      <button onclick="addToBasket('Canevinegar of Alilem', 80, './Santa Lucia/Untitled-2.png')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="" alt="Banana Chips of Banayoyo">
+      <h3>Banana Chips of Banayoyo</h3>
+      <p>Php 25</p>
+      <button onclick="addToBasket('Banana Chips of Banayoyo', 25, '')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="" alt="Abel Cloth of Bantay">
+      <h3>Abel Cloth of Bantay</h3>
+      <p>Php 250</p>
+      <button onclick="addToBasket('Abel Cloth of Bantay', 250, '')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="" alt="Dried Mango of Candon">
+      <h3>Dried Mango of Candon</h3>
+      <p>Php 75</p>
+      <button onclick="addToBasket('Dried Mango of Candon', 75, '')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="" alt="Calamay of Candon">
+      <h3>Calamay of Candon</h3>
+      <p>Php 50</p>
+      <button onclick="addToBasket('Calamay of Candon', 50, '')">Add to Cart</button>
+    </div>
+  </div>
+  
+  
+  <!-- Basket Overlay --><div class="basket-overlay" id="basket-overlay">
+    <div class="basket-header">Your Basket</div>
+    
+    <div class="basket-items" id="basket-items">
+        <!-- Cart items will be dynamically added here -->
+    </div>
+    
+    <div class="basket-total" id="basket-total">Total: Php 0</div>
+    
+    <!-- Payment Method, Delivery Address, Delivery Option, and Voucher Code Section -->
+    <div class="basket-options">
+        <!-- Payment Method -->
+        <div class="payment-method">
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" class="payment-method">
+                <option value="default">Select Payment Method</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="cash-on-delivery">Cash on Delivery</option>
+            </select>
+        </div>
+        
+        <!-- Delivery Address -->
+        <div class="delivery-address">
+            <label for="delivery-address">Delivery Address:</label>
+            <select id="delivery-address" class="delivery-address">
+                <option value="default">Select Delivery Address</option>
+                <option value="home">Home Address</option>
+                <option value="work">Work Address</option>
+                <option value="other">Other Address</option>
+            </select>
+        </div>
+
+        <!-- Delivery Option -->
+        <div class="delivery-option">
+            <label for="delivery-option">Delivery Option:</label>
+            <select id="delivery-option" class="delivery-option">
+                <option value="standard" data-price="0">Standard Delivery (Free)</option>
+                <option value="express" data-price="50">Express Delivery (Php 50)</option>
+            </select>
+        </div>
+
+        <!-- Voucher Code -->
+        <div class="voucher-code">
+            <label for="voucher-code">Voucher Code:</label>
+            <input type="text" id="voucher-code" placeholder="Enter voucher code">
+            <button id="apply-voucher">Apply</button>
+            <span id="voucher-message"></span>
+        </div>
+    </div>
+
+    <div class="basket-buttons">
+        <button class="checkout">Checkout</button>
+        <button class="close" onclick="toggleBasket()">Close</button>
+    </div>
+</div>
+
+<script src="./FUNCTION 1.js"></script>
+<script src="./FUNCTION 2.js"></script>
+
+
+
+
+  <div class="footer-container">
+    <div class="footer">
+      
+  
+      
+  
+        <div class="payment-methods">
+           
+            <img src="./gcash.png" alt="GCASH">
+            <img src="./pnb.png" alt="PNB">
+            <img src="./bpi.png" alt="BPI">
+            <img src="./SEABANK.png" alt="Shop">
+            <img src="./LANDBANK.png" alt="Visa">
+            <img src="./MASTERCARD.png" alt="MasterCard">
+            <img src="./UNION PAY.png" alt="UnionPay">
+        </div>
+  
+        <div class="copyright">
+            &copy; Juan Ilocos Sur  <br>
+            Powered by Juan De Ilocos 
+        </div>
+    </div>
+  </div>
+  
+  <style>
+    .footer-container {
+        background-color: #f1f1f1;
+        padding: 20px;
+    }
+    .footer {
+        text-align: center;
+    }
+    .footer .links a {
+        color: #000;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 14px;
+    }
+    .footer .links a:hover {
+        text-decoration: underline;
+    }
+    .footer .social-icons {
+        margin: 10px 0;
+    }
+    .footer .social-icons img {
+        width: 30px;
+        margin: 0 5px;
+    }
+    .footer .payment-methods img {
+        width: 50px;
+        margin: 0 5px;
+    }
+    .footer .copyright {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #666;
+    }
+  </style>
+  </html>
+  
+</body>
+</html>
