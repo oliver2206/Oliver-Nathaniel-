@@ -1,5 +1,4 @@
 
-  /* Basket Overlay Styling */
   .basket-overlay {
     position: fixed;
     top: 0;
@@ -19,7 +18,7 @@
 
   .basket-header {
     padding: 10px;
-    background-color: #333;
+    background-color: #d30202;
     color: #fff;
     font-size: 1.5em;
     text-align: center;
@@ -56,7 +55,7 @@
   .basket-buttons {
     display: flex;
     justify-content: space-between;
-    padding: 10px 15px;
+    padding: 10px 10px;
     background: #333;
   }
 
@@ -67,11 +66,32 @@
     cursor: pointer;
   }
 
-  .basket-buttons .checkout {
-    background: #28a745;
-  }
+  .basket-header {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+    position: relative; /* For positioning the close icon */
+}
+
+.close-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.close-icon:hover {
+    color: #e63946; /* Change color on hover */
+}
 
   .basket-buttons .close {
-    background: #dc3545;
+    background: #1b980d;
   }
 

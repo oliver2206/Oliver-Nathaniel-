@@ -11,26 +11,7 @@
         background-color: #f8f8f8;
         color: #333;
       }
-  
-      /* Header Top Announcement Bar */
-      .header-top {
-        text-align: center;
-        background: #333;
-        color: #fff;
-        font-size: 14px;
-        padding: 8px 0;
-        overflow: hidden;
-      }
-  
-      .carousel-text {
-        white-space: nowrap;
-        animation: slideText 8s linear infinite;
-      }
-  
-      @keyframes slideText {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-      }
+
   
       /* Main Header */
       header {
@@ -43,7 +24,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        z-index: 100;
+        z-index: 70;
       }
   
       .logo img {
@@ -162,4 +143,33 @@
         background: #ddd;
         color: #000;
         box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      .basket-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+        margin: 20px auto;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+  
+      .basket-container button {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+  
+      .basket-container button:hover {
+        background-color: #0056b3;
       }
